@@ -1,4 +1,12 @@
 Timebank::Application.routes.draw do
+  resources :accounts
+
+  resources :banks
+
+  resources :skills
+
+  resources :pictures
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
