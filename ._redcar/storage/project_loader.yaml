@@ -1,3 +1,6 @@
 --- 
-open_files: []
-
+open_files: 
+  - app/views/accounts/show.html.erb
+  - app/views/accounts/_form.html.erb
+  - app/views/accounts/index.html.erb
+  - app/views/banks/index.html.erb
