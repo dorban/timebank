@@ -14,5 +14,8 @@
 /log/*.log
 /tmp
 
-# Ignor all redcar files
+# Ignore all redcar files
 /.redcar
+
+# Ignore other files
+/db/schema.rb
