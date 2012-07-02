@@ -68,9 +68,9 @@ Timebank::Application.routes.draw do
 resources :user_sessions
 resources :users
 
-match 'account' => 'users#show', :as => :account
-match 'account/edit' => 'users#edit', :as => :edit_account
-match 'account/update' => 'users#update', :as => :update_account
+match 'profile' => 'users#show', :as => :profile
+match 'profile/edit' => 'users#edit', :as => :edit_profile
+match 'profile/update' => 'users#update', :as => :update_profile
 match 'login' => "user_sessions#new",      :as => :login
 match 'logout' => "user_sessions#destroy", :as => :logout
 match 'signup' => "users#new", :as => :signup

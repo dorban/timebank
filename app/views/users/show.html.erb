@@ -4,6 +4,36 @@
 </p>
 
 <p>
+  <b>User ID:</b>
+  <%=h @user.id %>
+</p>
+
+<p>
+  <b>Pictures:</b><br />
+<% @user.pictures.each do |pic| %>
+  Picture #<%= pic.id %>: <%= pic.url %> <br />
+<% end %>
+<%= link_to 'Add Picture', new_picture_path %>
+</p>
+
+<p>
+  <b>Timebank Account:</b>
+  <% if @user.account %>
+    <%= @user.account.time %> hours
+  <% else %>
+    <%= link_to 'New Account', new_account_path %>
+  <% end %>
+</p>
+
+<p>
+  <b>Sklls:</b><br />
+<% @user.skills.each do |skill| %>
+  <%= skill.name %> <br />
+<% end %>
+  <%= link_to 'Add Skill', new_skill_path %>
+</p>
+
+<p>
   <b>Login count:</b>
   <%=h @user.login_count %>
 </p>
@@ -34,4 +64,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_account_path %>
+<%= link_to 'Edit', edit_profile_path %>

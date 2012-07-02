@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
 #      c.validate_email_field = false
     end # block optional
 
+  has_many :pictures, :dependent => :destroy
+  has_one :account, :dependent => :destroy
+  has_many :skills, :dependent => :destroy
 end
