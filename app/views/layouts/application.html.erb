@@ -6,9 +6,45 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
+<body id="body">
+<div id="header-wrap">
+<div id="header">
+<h1>Timebank</h1>
+<p class="welcome">
+<%- if logged_in? -%>
+  Welcome, <%= h current_user.name %>!
+  (<%= link_to "Sign out", logout_path %>)
+<%- else -%>
+  <%= link_to "Sign in", login_path %> or
+  <%= link_to "Sign up", signup_path %>
+<%- end -%>
+</p>
+<div id="nav"><p>
+<a href="/" >Home</a>
+<%- if logged_in? -%>
+| <a href="/profile" >Profile</a>
+<%- end -%>
+| <a href="/about" >About</a>
+| <a href="/skills">Skillz</a>
+</p>
+</div>
+</div>
+</div>
+<div id="container">
+<div id="content">
+<%= yield -%>
+</div>
+</div>
+<div id="footer-wrap">
+<div id="nav"><p>
+<a href="/" >Home</a>
+<%- if logged_in? -%>
+| <a href="/profile" >Profile</a>
+<%- end -%>
+| <a href="/about" >About</a>
+</p>
+</div>
+</div>
 
 </body>
 </html>

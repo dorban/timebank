@@ -1,4 +1,6 @@
 Timebank::Application.routes.draw do
+  resources :accounts
+
   resources :banks
 
   resources :skills
@@ -55,10 +57,35 @@ Timebank::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+resources :user_sessions
+resources :users
+
+match 'profile' => 'users#show', :as => :profile
+match 'profile/edit' => 'users#edit', :as => :edit_profile
+match 'profile/update' => 'users#update', :as => :update_profile
+match 'login' => "user_sessions#new",      :as => :login
+match 'logout' => "user_sessions#destroy", :as => :logout
+match 'signup' => "users#new", :as => :signup
+match 'about' => "home#about", :as => :about
+match 'home' => "home#about", :as => :home
+
+#  resources :user_session
+#  map.root :controller => "user_sessions", :action => "new" # optional, this just sets the root route
+
+#  map.resource :account, :controller => "users"
+#  map.resources :users
+
+#  map.signup '/signup', :controller => 'users', :action => 'new'
+#  map.login '/login', :controller => 'user_sessions', :action => 'new'
+#  map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
+#  map.about '/about', :controller => 'home', :action => 'about'
+#  map.home '/', :controller => 'home'
 end
