@@ -11,7 +11,7 @@
 <p>
   <b>Pictures:</b><br />
 <% @user.pictures.each do |pic| %>
-  Picture #<%= pic.id %>:   <img src = "<%= pic.url %> Width = "200" Height = "200"</img>
+Picture #<%= pic.id %>:   <a href = "<%= pic.url %>"><img src = <%= pic.url %> Width = "200" Height = "200"</img></a>
 <% end %>
 <%= link_to 'Add Picture', new_picture_path %>
 </p>
