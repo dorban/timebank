@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     now = Date.today
     year = now.year - @user.birthday.year
 
-    if (date+year.year) > now
+    if (@user.birthday+year.year) > now
       year = year - 1
     end
     @age=year
