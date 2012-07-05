@@ -14,10 +14,11 @@
 </p>
 
 
+
 <p>
   <b>Time Stored In Bank:</b>
   <% if @user.account %>
-    <%= @user.account.time %> hours
+    <%= @user.account.time %>
   <% else %>
     <%= link_to 'Add Time', new_account_path %>
   <% end %>
