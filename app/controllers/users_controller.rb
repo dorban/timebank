@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     #@user.email = ''#@user.login + "@alicetobob.com"
     if @user.save
+
+      @account = Account.new(:time => 0.0, :user_id => @user.id)
+      @account.save
+
       flash[:notice] = "Account registered!"
       redirect_back_or_default profile_url
     else
