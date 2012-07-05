@@ -19,6 +19,14 @@ class UsersController < ApplicationController
   
   def show
     @user = @current_user
+    
+    now = Date.today
+    year = now.year - @user.birthday.year
+
+    if (date+year.year) > now
+      year = year - 1
+    end
+    @age=year
   end
 
   def edit
