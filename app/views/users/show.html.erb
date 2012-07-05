@@ -19,13 +19,15 @@
   <b>Time Stored In Bank:</b>
   <% if @user.account %>
     <%= @user.account.time %>
-  <% else %>
+
+    <%= link_to @user.account.time, @user.account %>  
+<% else %>
     <%= link_to 'Add Time', new_account_path %>
   <% end %>
 </p>
 
 <p>
-  <b>Skills:</b><br />
+  <b>Sklls:</b><br />
 <% @user.skills.each do |skill| %>
 <ul><li><td><%= link_to skill.name, skill %></td></li>
 </ul>
