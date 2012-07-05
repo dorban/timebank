@@ -3,26 +3,27 @@
   <%=h @user.name %>
 </p>
 
-<p>
-  <b>User ID:</b>
-  <%=h @user.id %>
-</p>
 
 <p>
  
 <% @user.pictures.each do |pic| %>
-Picture #<%= pic.id %>:   <a href = "<%= pic.url %>"><img src = <%= pic.url %> Width = "200" Height = "200" <target="_blank"></img></a>
+   <a href = "<%= pic.url %>"><img src = <%= pic.url %> Width = "200" Height = "200" <target="_blank"></img></a>
 
 <% end %>
 <%= link_to 'Add Picture', new_picture_path %>
 </p>
 
 <p>
-  <b>Timebank Account:</b>
+  <b>User ID:</b>
+  <%=h @user.id %>
+</p>
+
+<p>
+  <b>Time Stored In Bank:</b>
   <% if @user.account %>
     <%= @user.account.time %> hours
   <% else %>
-    <%= link_to 'New Account', new_account_path %>
+    <%= link_to 'Add Time', new_account_path %>
   <% end %>
 </p>
 
