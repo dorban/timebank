@@ -1,6 +1,6 @@
 <p>
-  
-<h2><%=h @user.name %></h2>
+  <b>Name:</b>
+  <%=h @user.name %>
 </p>
 
 
@@ -11,11 +11,6 @@
 
 <% end %>
 <%= link_to 'Add Picture', new_picture_path %>
-</p>
-
-<p>
-  <b>User ID:</b>
-  <%=h @user.id %>
 </p>
 
 <p>
