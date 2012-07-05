@@ -26,6 +26,7 @@ class SkillsController < ApplicationController
   # GET /skills/new.json
   def new
     @skill = Skill.new
+    @user = current_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,12 +37,14 @@ class SkillsController < ApplicationController
   # GET /skills/1/edit
   def edit
     @skill = Skill.find(params[:id])
+    @user = current_user
   end
 
   # POST /skills
   # POST /skills.json
   def create
     @skill = Skill.new(params[:skill])
+    @user = current_user
 
     respond_to do |format|
       if @skill.save
