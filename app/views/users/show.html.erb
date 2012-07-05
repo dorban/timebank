@@ -26,13 +26,13 @@
 </p>
 
 <p>
-  <b>Sklls:</b><br />
+  <b>Skills:</b><br />
 <% @user.skills.each do |skill| %>
 <ul><li><td><%= link_to skill.name, skill %></td></li>
 </ul>
 <% end %>
-  <%= link_to 'Add Skill', new_skill_path %>
+  <%= link_to 'Add New Skill', new_skill_path %>
 </p>
 
 
-<%= link_to 'Edit', edit_profile_path %>
+<%= link_to 'Edit Profile', edit_profile_path %>
