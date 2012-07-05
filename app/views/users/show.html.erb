@@ -30,7 +30,7 @@
 <p>
   <b>Sklls:</b><br />
 <% @user.skills.each do |skill| %>
-<ul><li><%= skill.name %></li>
+<ul><li><td><%= link_to skill.name, skill %></td></li>
 </ul>
 <% end %>
   <%= link_to 'Add Skill', new_skill_path %>
