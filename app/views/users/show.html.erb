@@ -18,7 +18,6 @@
 <p>
   <b>Time Stored In Bank:</b>
   <% if @user.account %>
-    <%= @user.account.time %>
 
     <%= link_to @user.account.time, @user.account %>  
 <% else %>
@@ -33,10 +32,6 @@
 </ul>
 <% end %>
   <%= link_to 'Add Skill', new_skill_path %>
-</p>
-
-<p>
-  <b>Age: <%= @age%></b>
 </p>
 
 
