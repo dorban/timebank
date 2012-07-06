@@ -13,15 +13,12 @@
 <%= link_to 'Add Picture', new_picture_path %>
 </p>
 
-<body>
-<% @user.background.each. do |background|%>
-  <%link_to 'Add Background', new_backgound_path%>
-</body>
 <p>
   <b>Time Stored In Bank:</b>
   <% if @user.account %>
-    <%= @user.account.time %> hours
-  <% else %>
+
+    <%= link_to @user.account.time, @user.account %>  
+<% else %>
     <%= link_to 'Add Time', new_account_path %>
   <% end %>
 </p>
@@ -32,8 +29,9 @@
 <ul><li><td><%= link_to skill.name, skill %></td></li>
 </ul>
 <% end %>
-  <%= link_to 'Add Skill', new_skill_path %>
+
+  <%= link_to 'Add New Skill', new_skill_path %>
 </p>
 
 
-<%= link_to 'Edit', edit_profile_path %>
+<%= link_to 'Edit Profile', edit_profile_path %>
