@@ -4,7 +4,11 @@
 <table>
   <% @users.each do |user| %>
   <tr>
-    <td><img src="<%= user.pictures[0].url%>" width=50 height=50 ></img></td>
+    <% if user.pictures[0] %>
+      <td><img src="<%= user.pictures[0].url%>" width=50 height=50 ></img></td>
+    <% else %>
+      <td></td>
+    <% end %>
     <td><h4><%= link_to user.name, user %></h4></td>
   </tr>
 <% end %>
