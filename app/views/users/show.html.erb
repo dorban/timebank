@@ -1,4 +1,6 @@
-<p>
+<div style="background-image:url('<%= @user.background%>')">
+  
+  <p>
   
 <h2><%=h @user.name %></h2>
 </p>
@@ -38,3 +40,4 @@
 
   <%= link_to 'Edit Profile', edit_profile_path %>
 </br>
+</div>
