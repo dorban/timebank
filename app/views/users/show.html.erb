@@ -2,7 +2,9 @@
   
 <h2><%=h @user.name %></h2>
 </p>
-
+<p>
+  <b>Age:<%= @age%></b>
+</p>
 
 <p>
  
@@ -13,33 +15,25 @@
 <%= link_to 'Add Picture', new_picture_path %>
 </p>
 
-
-
 <p>
   <b>Time Stored In Bank:</b>
   <% if @user.account %>
 
-    <%= link_to @user.account.time, @user.account %>  
+    <%= link_to @user.account.time, @user.account %>
 <% else %>
     <%= link_to 'Add Time', new_account_path %>
   <% end %>
 </p>
 
 <p>
-  <b>Skills:</b><br />
+  <b>Sklls:</b><br />
 <% @user.skills.each do |skill| %>
 <ul><li><td><%= link_to skill.name, skill %></td></li>
 </ul>
 <% end %>
+
   <%= link_to 'Add New Skill', new_skill_path %>
 </p>
 
-<p>
-  <b>Age:<%= @age%></b>
- <h4>Year-Month-Date</h4> 
-
-
-
-  <br>
   <%= link_to 'Edit Profile', edit_profile_path %>
 </br>
