@@ -25,7 +25,11 @@
     <%= f.password_field :password %><br />
 <br />
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %><br />  
+  <div class="field">
+    <%= f.label :birthday %> (yyyy/mm/dd)<br />
+    <%= f.text_field :birthday %>
+  </div>
   </div>
   <div class="actions">
     <%= f.submit %>

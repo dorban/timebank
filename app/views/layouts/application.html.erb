@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Timebank</title>
+  <title>Hope Academy Timebank</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,7 +9,7 @@
 <body id="body">
 <div id="header-wrap">
 <div id="header">
-<h1>Timebank</h1>
+<h1>Hope Academy Timebank</h1>
 <p class="welcome">
 <%- if logged_in? -%>
   Welcome, <%= h current_user.name %>!
@@ -23,9 +23,10 @@
 <a href="/" >Home</a>
 <%- if logged_in? -%>
 | <a href="/profile" >Profile</a>
+| <a href="/skills">Skills</a>
 <%- end -%>
 | <a href="/about" >About</a>
-| <a href="/skills">Skillz</a>
+
 </p>
 </div>
 </div>
@@ -40,9 +41,12 @@
 <a href="/" >Home</a>
 <%- if logged_in? -%>
 | <a href="/profile" >Profile</a>
+| <a href="/skills">Skills</a> 
 <%- end -%>
 | <a href="/about" >About</a>
+
 </p>
+</div>
 </div>
 </div>
 

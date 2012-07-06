@@ -1,11 +1,11 @@
-<h1>Listing Pictures</h1>
+<h1>Pictures</h1>
 
 <table>
   <tr>
-    <th>Type</th>
-    <th>Url</th>
-    <th>Width</th>
-    <th>Height</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,7 +19,7 @@
     <td><%= picture.height %></td>
     <td><%= link_to 'Show', picture %></td>
     <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-    <td><%= link_to 'Destroy', picture, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Delete', picture, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
