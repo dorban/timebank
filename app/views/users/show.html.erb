@@ -13,8 +13,6 @@
 <%= link_to 'Add Picture', new_picture_path %>
 </p>
 
-
-
 <p>
   <b>Time Stored In Bank:</b>
   <% if @user.account %>
@@ -26,11 +24,12 @@
 </p>
 
 <p>
-  <b>Skills:</b><br />
+  <b>Sklls:</b><br />
 <% @user.skills.each do |skill| %>
 <ul><li><td><%= link_to skill.name, skill %></td></li>
 </ul>
 <% end %>
+
   <%= link_to 'Add New Skill', new_skill_path %>
 </p>
 
