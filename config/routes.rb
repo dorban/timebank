@@ -1,4 +1,8 @@
 Timebank::Application.routes.draw do
+  resources :offers
+
+  resources :requests
+
   resources :transactions
 
   resources :accounts
