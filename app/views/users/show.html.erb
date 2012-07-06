@@ -19,7 +19,7 @@
   <b>Time Stored In Bank:</b>
   <% if @user.account %>
 
-    <%= link_to @user.account.time, @user.account %>  
+    <%= link_to @user.account.time, @user.account %>
 <% else %>
     <%= link_to 'Add Time', new_account_path %>
   <% end %>
