@@ -1,0 +1,17 @@
+
+<h1><font color="Black">;)</font></h1>
+
+<table>
+  <% @users.each do |user| %>
+  <tr>
+    <td><img src="<%= user.pictures[0].url%>" width=50 height=50 ></img></td>
+    <td><h4><%= link_to user.name, user %></h4></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+
+
+
