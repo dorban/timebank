@@ -5,16 +5,17 @@
 <p>
   <b>Age:<%= @age%></b>
 </p>
-
 <p>
- 
 <% @user.pictures.each do |pic| %>
    <a href = "<%= pic.url %>"><img src = <%= pic.url %> Width = "200" Height = "200" <target="_blank"></img></a>
-
 <% end %>
 <%= link_to 'Add Picture', new_picture_path %>
 </p>
 
+<p>
+  <b>Description:<%= @user.description%></b>
+</p>
+ 
 <p>
   <b>Time Stored In Bank:</b>
   <% if @user.account %>
@@ -26,7 +27,7 @@
 </p>
 
 <p>
-  <b>Sklls:</b><br />
+  <b>Skills:</b><br />
 <% @user.skills.each do |skill| %>
 <ul><li><td><%= link_to skill.name, skill %></td></li>
 </ul>
