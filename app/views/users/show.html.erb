@@ -2,7 +2,9 @@
   
 <h2><%=h @user.name %></h2>
 </p>
-
+<p>
+  <b>Age:<%= @age%></b>
+</p>
 
 <p>
  
@@ -33,12 +35,5 @@
   <%= link_to 'Add New Skill', new_skill_path %>
 </p>
 
-<p>
-  <b>Age:<%= @age%></b>
-  
-
-
-
-  <br>
   <%= link_to 'Edit Profile', edit_profile_path %>
 </br>
