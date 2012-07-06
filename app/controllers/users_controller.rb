@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     #@user.email = ''#@user.login + "@alicetobob.com"
     if @user.save
+
+      @account = Account.new(:time => 0.0, :user_id => @user.id)
+      @account.save
+
       flash[:notice] = "Account registered!"
       redirect_back_or_default profile_url
     else
@@ -19,14 +23,16 @@ class UsersController < ApplicationController
   
   def show
     @user = @current_user
-    
-    now = Date.today
-    year = now.year - @user.birthday.year
 
-    if (@user.birthday+year.year) > now
-      year = year - 1
+    if (@user.birthday)    
+      now = Date.today
+      year = now.year - @user.birthday.year
+
+      if (@user.birthday+year.year) > now
+        year = year - 1
+      end
+      @age=year
     end
-    @age=year
   end
 
   def edit
